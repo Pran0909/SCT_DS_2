@@ -1,0 +1,21 @@
+import pandas as pd
+import seaborn as sns 
+import matplotlib.pyplot as plt
+
+# Data Load Karna
+df = pd.read_csv('train.csv')
+
+# --- Data Cleaning ---
+df['Age'].fillna(df['Age'].median(), inplace=True)
+df.drop('Cabin', axis=1, inplace=True)
+
+# --- EDA Visualizations (Task 02) ---
+plt.figure(figsize=(6, 4))
+sns.barplot(x='Pclass', y='Survived', data=df)
+plt.title('Survival Rate by Passenger Class')
+plt.show()
+
+plt.figure(figsize=(6, 4))
+sns.barplot(x='Sex', y='Survived', data=df)
+plt.title('Survival Rate by Gender')
+plt.show()
