@@ -2,7 +2,6 @@ import pandas as pd
 import seaborn as sns 
 import matplotlib.pyplot as plt
 
-# Data Load Karna
 df = pd.read_csv('train.csv')
 
 # --- Data Cleaning ---
